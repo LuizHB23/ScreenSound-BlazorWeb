@@ -1,0 +1,14 @@
+@page "/Artistas"
+@inject ArtistaAPI artistaAPI; 
+
+<h3>Artistas</h3>
+
+@code 
+{
+    private ICollection<ArtistaResponse>? listaArtistas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        listaArtistas = await artistaAPI.GetArtistaResponsesAsync();
+    }
+}
